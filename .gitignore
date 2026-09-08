@@ -3,6 +3,7 @@
 venv/
 __pycache__/
 *.pyc
+*.pyo
 
 # Jupyter
 .ipynb_checkpoints/
@@ -10,5 +11,11 @@ __pycache__/
 # Raw dataset
 DataSet/
 
-# Local/generated files
+# Temp scripts
 generate_report.py
+run_week2.py
+create_notebook.py
+
+# OS files
+.DS_Store
+Thumbs.db
