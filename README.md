@@ -2,10 +2,11 @@
 
 ## Overview
 
-This project performs financial data analysis and forecasting on historical NIFTY 50 index data, completed as a two-week internship project.
+This project performs financial data analysis and forecasting on historical NIFTY 50 index data, completed as a three-week internship project.
 
 - **Week 1:** Exploratory Data Analysis (EDA)
 - **Week 2:** Financial Forecast Model
+- **Week 3:** Risk Analysis
 
 ## Dataset
 
@@ -139,6 +140,62 @@ This phase develops a basic financial forecast model for the NIFTY 50 closing pr
 
 ---
 
+## Week 3 — Risk Analysis
+
+This phase conducts a structured financial risk analysis of the NIFTY 50 index using historical data from 2007 to 2026.
+
+### Risk Categories Analyzed
+
+- **Market / Price Risk:** Price extremes, major declines, maximum drawdown
+- **Volatility Risk:** Rolling 30-day volatility, yearly comparisons, high-volatility periods
+- **Extreme Return / Shock Risk:** Single-day moves, frequency of ±2% days, return distribution (kurtosis)
+- **Downside Risk:** Negative return frequency, Value at Risk (VaR), Conditional VaR (CVaR)
+- **Drawdown Risk:** Peak-to-trough analysis, maximum drawdown, recovery time
+
+### Key Risk Metrics
+
+| Metric | Value |
+|--------|-------|
+| Maximum Drawdown | -59.86% (2008 crisis) |
+| Worst Single-Day Loss | -12.98% (2020-03-23) |
+| Best Single-Day Gain | +17.74% (2009-05-18) |
+| Average 30-day Volatility | 1.10% |
+| Peak Volatility | 4.84% (2008-11-24) |
+| VaR (95% confidence) | -1.83% daily |
+| CVaR (95% confidence) | -3.04% daily |
+| Kurtosis | 16.07 (fat-tailed) |
+| Extreme Days (±2%) | 387 (8.56%) |
+| Negative Trading Days | 46.85% |
+
+### Risk Severity Ranking
+
+1. Market / Price Risk — Very High
+2. Drawdown Risk — Very High
+3. Volatility Risk — High
+4. Extreme Return / Shock Risk — High
+5. Downside Risk — Moderate
+
+### Week 3 Deliverables
+
+- Jupyter notebook with complete risk analysis and executed outputs
+- Historical drawdown visualization
+- Volatility risk visualization
+- Extreme returns distribution chart
+- Downside risk analysis chart
+- Market risk overview chart
+- Professional DOCX risk analysis report
+
+---
+
+### Week 2 Deliverables
+
+- Jupyter notebook with complete implementation and executed outputs
+- Actual vs Predicted visualization
+- Future 30-session forecast visualization
+- Professional DOCX report with analysis and interpretation
+
+---
+
 ## Project Structure
 
 ```text
@@ -154,7 +211,12 @@ nifty50-financial-data-analysis/
 │   ├── top_5_volatile_years.png
 │   ├── trading_volume.png
 │   ├── week2_actual_vs_predicted.png
-│   └── week2_future_forecast.png
+│   ├── week2_future_forecast.png
+│   ├── week3_drawdown.png
+│   ├── week3_extreme_returns.png
+│   ├── week3_market_risk.png
+│   ├── week3_volatility.png
+│   └── week3_downside_risk.png
 │
 ├── DataSet/
 │   └── NIFTY50_1995_to_Feb_2026.csv
@@ -163,6 +225,8 @@ nifty50-financial-data-analysis/
 ├── NIFTY50_Week1_Analysis_Report.docx           # Week 1 report
 ├── NIFTY50_Week2_Financial_Forecast.ipynb       # Week 2 notebook
 ├── NIFTY50_Week2_Financial_Forecast_Report.docx  # Week 2 report
+├── NIFTY50_Week3_Risk_Analysis.ipynb            # Week 3 notebook
+├── NIFTY50_Week3_Risk_Analysis_Report.docx       # Week 3 report
 ├── README.md
 └── .gitignore
 ```
