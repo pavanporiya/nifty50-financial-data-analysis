@@ -2,11 +2,12 @@
 
 ## Overview
 
-This project performs financial data analysis and forecasting on historical NIFTY 50 index data, completed as a three-week internship project.
+This project performs financial data analysis, forecasting, risk assessment, and statistical hypothesis testing on historical NIFTY 50 index data, completed as a four-week internship project.
 
 - **Week 1:** Exploratory Data Analysis (EDA)
 - **Week 2:** Financial Forecast Model
 - **Week 3:** Risk Analysis
+- **Week 4:** Hypothesis Testing
 
 ## Dataset
 
@@ -187,12 +188,51 @@ This phase conducts a structured financial risk analysis of the NIFTY 50 index u
 
 ---
 
-### Week 2 Deliverables
+## Week 4 — Hypothesis Testing
 
-- Jupyter notebook with complete implementation and executed outputs
-- Actual vs Predicted visualization
-- Future 30-session forecast visualization
-- Professional DOCX report with analysis and interpretation
+This phase conducts a statistically rigorous hypothesis test on the daily return series of the NIFTY 50 index to evaluate long-term return drift.
+
+### Core Research Question
+
+> *"Is the average daily return of the NIFTY 50 index significantly different from zero over the analyzed period (2007–2026)?"*
+
+### Hypotheses Formulation
+
+- **Null Hypothesis ($H_0$):** $\mu = 0$ (The mean daily return equals zero)
+- **Alternative Hypothesis ($H_1$):** $\mu \neq 0$ (The mean daily return does not equal zero)
+- **Significance Level ($\alpha$):** 0.05 (95% confidence level)
+
+### Key Descriptive Statistics (Daily Returns)
+
+| Metric | Value |
+|--------|-------|
+| Cleaned Dataset Observations | 4,522 |
+| Valid Return Observations ($n$) | 4,521 |
+| Missing Return Rows Removed | 1 |
+| Mean Daily Return ($\mu$) | **+0.046935%** |
+| Median Daily Return | **+0.062461%** |
+| Standard Deviation ($s$) | **1.301451%** |
+| Minimum Daily Return | **-12.980466%** |
+| Maximum Daily Return | **+17.744066%** |
+
+### Statistical Test Results
+
+| Test Name | Null Hypothesis ($H_0$) | Test Statistic | p-Value | 95% Confidence Interval | Statistical Decision |
+|-----------|-----------------------|----------------|---------|-------------------------|----------------------|
+| **One-Sample t-Test (Primary)** | $\mu = 0$ | $t = 2.424855$ | **0.015353** ($p < 0.05$) | [+0.008988%, +0.084882%] | **Reject $H_0$** |
+| **Wilcoxon Signed-Rank Test (Robustness)** | Median = 0 | $W = 4,748,216.0$ | **0.000054** ($p < 0.05$) | N/A (Non-parametric) | **Reject $H_0$** |
+
+### Key Conclusions & Interpretation
+
+- **Decision:** **Reject the Null Hypothesis ($H_0$)** since $p = 0.015353 < 0.05$.
+- **Interpretation:** There is statistically significant evidence that the mean daily return of the NIFTY 50 index is positive (+0.0469%/day).
+- **Economic Significance vs. Predictability:** While a +0.0469%/day drift compounds to an annualized return of ~12.5%, daily volatility ($s = 1.3015\%$) is **27.7 times larger** than the mean return. Thus, statistical significance does not imply short-term trade predictability.
+
+### Week 4 Deliverables
+
+- Fully executed Jupyter notebook: `NIFTY50_Week4_Hypothesis_Testing.ipynb`
+- Daily return distribution chart: `assets/week4_return_distribution.png`
+- Professional Word report: `NIFTY50_Week4_Hypothesis_Testing_Report.docx` (in root and `Report/`)
 
 ---
 
@@ -216,17 +256,26 @@ nifty50-financial-data-analysis/
 │   ├── week3_extreme_returns.png
 │   ├── week3_market_risk.png
 │   ├── week3_volatility.png
-│   └── week3_downside_risk.png
+│   ├── week3_downside_risk.png
+│   └── week4_return_distribution.png
 │
 ├── DataSet/
 │   └── NIFTY50_1995_to_Feb_2026.csv
 │
-├── NIFTY50_Financial_Data_Analysis.ipynb       # Week 1 notebook
-├── NIFTY50_Week1_Analysis_Report.docx           # Week 1 report
-├── NIFTY50_Week2_Financial_Forecast.ipynb       # Week 2 notebook
-├── NIFTY50_Week2_Financial_Forecast_Report.docx  # Week 2 report
-├── NIFTY50_Week3_Risk_Analysis.ipynb            # Week 3 notebook
-├── NIFTY50_Week3_Risk_Analysis_Report.docx       # Week 3 report
+├── Report/
+│   ├── NIFTY50_Week1_Final_Report.docx
+│   ├── NIFTY50_Week2_Financial_Forecast_Report.docx
+│   ├── NIFTY50_Week3_Risk_Analysis_Report.docx
+│   └── NIFTY50_Week4_Hypothesis_Testing_Report.docx
+│
+├── NIFTY50_Financial_Data_Analysis.ipynb          # Week 1 notebook
+├── NIFTY50_Week1_Analysis_Report.docx              # Week 1 report
+├── NIFTY50_Week2_Financial_Forecast.ipynb          # Week 2 notebook
+├── NIFTY50_Week2_Financial_Forecast_Report.docx     # Week 2 report
+├── NIFTY50_Week3_Risk_Analysis.ipynb               # Week 3 notebook
+├── NIFTY50_Week3_Risk_Analysis_Report.docx          # Week 3 report
+├── NIFTY50_Week4_Hypothesis_Testing.ipynb          # Week 4 notebook
+├── NIFTY50_Week4_Hypothesis_Testing_Report.docx     # Week 4 report
 ├── README.md
 └── .gitignore
 ```
