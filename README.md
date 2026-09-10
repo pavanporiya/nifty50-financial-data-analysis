@@ -2,12 +2,13 @@
 
 ## Overview
 
-This project performs financial data analysis, forecasting, risk assessment, and statistical hypothesis testing on historical NIFTY 50 index data, completed as a four-week internship project.
+This project performs financial data analysis, forecasting, risk assessment, statistical hypothesis testing, and data visualization on historical NIFTY 50 index data, completed as a five-week internship project.
 
 - **Week 1:** Exploratory Data Analysis (EDA)
 - **Week 2:** Financial Forecast Model
 - **Week 3:** Risk Analysis
 - **Week 4:** Hypothesis Testing
+- **Week 5:** Data Visualization
 
 ## Dataset
 
@@ -236,6 +237,46 @@ This phase conducts a statistically rigorous hypothesis test on the daily return
 
 ---
 
+## Week 5 — Data Visualization
+
+This phase converts the analytical findings of Weeks 1–4 into presentation-ready visualizations. Every chart answers a specific financial question and is explained through its purpose, chart-type rationale, what it shows, financial interpretation, and key takeaway.
+
+### Visualizations Created
+
+| # | Visualization | Financial Question |
+|---|---------------|--------------------|
+| 1 | Long-term price trend | How has the NIFTY 50 closing price changed over 2007–2026? |
+| 2 | Daily return behavior | How variable are daily returns, and when were the largest moves? |
+| 3 | Return distribution | What shape do daily returns take (center, spread, tails)? |
+| 4 | Moving averages (Close, MA50, MA200) | How do short-term and long-term trend measures relate? |
+| 5 | Rolling 30-day volatility | When did market uncertainty increase? |
+| 6 | Drawdown analysis | How severe and prolonged were declines from prior peaks? |
+| 7 | Yearly performance (compounded) | How did calendar-year returns differ? |
+| 8 | Volume analysis | How did trading volume vary over time? |
+| A.1 | Monthly return heatmap | Is there recurring monthly return behavior? |
+| A.2 | Volatility vs drawdown | Do high-volatility episodes align with deep drawdowns? |
+| A.3 | Extreme return days | Which single days produced the largest gains and losses? |
+
+### Coverage
+
+- **Long-term price trend** — compounded price change of +468.93% (₹4,494.65 to ₹25,571.25), all-time closing high ₹26,328.55 (2 Jan 2026).
+- **Daily return behavior** — noise-dominated daily moves with clusters of extreme days; best day +17.74% (18 May 2009), worst day -12.98% (23 Mar 2020).
+- **Return distribution** — near-symmetric (skewness +0.06) but strongly fat-tailed (excess kurtosis +16.05).
+- **Moving averages** — MA50 above MA200 on 70.83% of valid observations, inverting during the 2008 and 2020 crises.
+- **Rolling volatility** — averaged 1.10%, peaked at 4.84% (24 Nov 2008), bottomed at 0.39% (Jul 2017).
+- **Drawdown** — maximum drawdown -59.86% (trough 27 Oct 2008); deepest 2020 drawdown -38.44% (23 Mar 2020); 589 trading days in drawdown worse than -20%.
+- **Yearly performance** — compounded calendar-year returns from -51.79% (2008) to +75.76% (2009); 16 of 20 years positive; partial years (2007, 2026) marked separately.
+- **Volume analysis** — index-level volume; yearly median ≈0.19 M (2013–2019) vs ≈0.31 M (2020–2026); interpreted cautiously.
+- **Cross-visualization insights** — volatility spikes coincide with drawdown episodes (correlation ≈ -0.74); fat tails visible in three independent charts; volume behaves as a coincident stress echo, not a leading indicator.
+
+### Week 5 Deliverables
+
+- Jupyter notebook: `NIFTY50_Week5_Data_Visualization.ipynb` (fully executed)
+- 11 visualization images in `assets/week5/`
+- Professional Word report: `reports/NIFTY50_Week5_Data_Visualization_Report.docx`
+
+---
+
 ## Project Structure
 
 ```text
@@ -257,7 +298,20 @@ nifty50-financial-data-analysis/
 │   ├── week3_market_risk.png
 │   ├── week3_volatility.png
 │   ├── week3_downside_risk.png
-│   └── week4_return_distribution.png
+│   ├── week4_return_distribution.png
+│   │
+│   └── week5/
+│       ├── 01_long_term_price_trend.png
+│       ├── 02_daily_return_behavior.png
+│       ├── 03_return_distribution.png
+│       ├── 04_moving_average_trend.png
+│       ├── 05_rolling_volatility.png
+│       ├── 06_drawdown_analysis.png
+│       ├── 07_yearly_performance.png
+│       ├── 08_volume_analysis.png
+│       ├── 09_monthly_return_heatmap.png
+│       ├── 10_volatility_vs_drawdown.png
+│       └── 11_extreme_return_days.png
 │
 ├── DataSet/
 │   └── NIFTY50_1995_to_Feb_2026.csv
@@ -268,14 +322,14 @@ nifty50-financial-data-analysis/
 │   ├── NIFTY50_Week3_Risk_Analysis_Report.docx
 │   └── NIFTY50_Week4_Hypothesis_Testing_Report.docx
 │
+├── reports/
+│   └── NIFTY50_Week5_Data_Visualization_Report.docx
+│
 ├── NIFTY50_Financial_Data_Analysis.ipynb          # Week 1 notebook
-├── NIFTY50_Week1_Analysis_Report.docx              # Week 1 report
-├── NIFTY50_Week2_Financial_Forecast.ipynb          # Week 2 notebook
-├── NIFTY50_Week2_Financial_Forecast_Report.docx     # Week 2 report
-├── NIFTY50_Week3_Risk_Analysis.ipynb               # Week 3 notebook
-├── NIFTY50_Week3_Risk_Analysis_Report.docx          # Week 3 report
-├── NIFTY50_Week4_Hypothesis_Testing.ipynb          # Week 4 notebook
-├── NIFTY50_Week4_Hypothesis_Testing_Report.docx     # Week 4 report
+├── NIFTY50_Week2_Financial_Forecast.ipynb         # Week 2 notebook
+├── NIFTY50_Week3_Risk_Analysis.ipynb              # Week 3 notebook
+├── NIFTY50_Week4_Hypothesis_Testing.ipynb         # Week 4 notebook
+├── NIFTY50_Week5_Data_Visualization.ipynb         # Week 5 notebook
 ├── README.md
 └── .gitignore
 ```
