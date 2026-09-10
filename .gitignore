@@ -11,12 +11,7 @@ __pycache__/
 # Raw dataset
 DataSet/
 
-# Temp scripts
-generate_report.py
-run_week2.py
-create_notebook.py
-scripts/
-scripts
+
 
 # OS files
 .DS_Store
