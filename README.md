@@ -2,13 +2,14 @@
 
 ## Overview
 
-This project performs financial data analysis, forecasting, risk assessment, statistical hypothesis testing, and data visualization on historical NIFTY 50 index data, completed as a five-week internship project.
+This project performs financial data analysis, forecasting, risk assessment, statistical hypothesis testing, data visualization, and final consolidated reporting on historical NIFTY 50 index data, completed as a six-week internship project.
 
 - **Week 1:** Exploratory Data Analysis (EDA)
 - **Week 2:** Financial Forecast Model
 - **Week 3:** Risk Analysis
 - **Week 4:** Hypothesis Testing
 - **Week 5:** Data Visualization
+- **Week 6:** Final Reporting & Presentation
 
 ## Dataset
 
@@ -277,6 +278,30 @@ This phase converts the analytical findings of Weeks 1–4 into presentation-rea
 
 ---
 
+## Week 6 — Final Reporting
+
+The final phase consolidates all five analytical stages into one coherent internship report. It is not a copy-paste of the previous deliverables: it re-derives the project's analytical story, connects findings across weeks, and adds forward-looking recommendations.
+
+### Contents of the Final Report
+
+- **Executive Summary** — the entire project on one page
+- **Dataset Overview** — source, period, cleaning, and quality validation
+- **Week 1–5 sections** — the objective, method, actual results, and interpretation of each stage
+- **Integrated Findings Across the Project** — how EDA feeds risk analysis, how EDA structure shapes the forecast model, how risk metrics contextualize forecast error, how hypothesis testing adds inferential weight to the EDA, and how visualization verifies every claim
+- **Key Findings** — the ten strongest findings with their results and significance
+- **Analytical Insights** — cautious, evidence-based conclusions about the index's historical behavior
+- **Recommendations for Future Analysis** — ten methodological next steps (multi-model comparison, exogenous variables, forecast intervals, walk-forward validation, GARCH volatility models, subsample testing, constituent-level analysis, regime detection, sensitivity analysis, regime-filter backtesting)
+- **Limitations and Final Conclusion**
+- **7 summary tables** (dataset, forecast evaluation, risk summary, hypothesis tests, key findings, recommendations, deliverables) and **8 selected figures** from Weeks 1–5 with numbered captions
+
+All numbers in the final report were cross-checked against the executed Week 1–5 notebooks; no new analysis was performed and no previous result was altered.
+
+### Week 6 Deliverables
+
+- Final Word report: `Report/NIFTY50_Week6_Final_Report.docx`
+
+---
+
 ## Project Structure
 
 ```text
@@ -320,10 +345,9 @@ nifty50-financial-data-analysis/
 │   ├── NIFTY50_Week1_Final_Report.docx
 │   ├── NIFTY50_Week2_Financial_Forecast_Report.docx
 │   ├── NIFTY50_Week3_Risk_Analysis_Report.docx
-│   └── NIFTY50_Week4_Hypothesis_Testing_Report.docx
-│
-├── reports/
-│   └── NIFTY50_Week5_Data_Visualization_Report.docx
+│   ├── NIFTY50_Week4_Hypothesis_Testing_Report.docx
+│   ├── NIFTY50_Week5_Data_Visualization_Report.docx
+│   └── NIFTY50_Week6_Final_Report.docx
 │
 ├── NIFTY50_Financial_Data_Analysis.ipynb          # Week 1 notebook
 ├── NIFTY50_Week2_Financial_Forecast.ipynb         # Week 2 notebook
